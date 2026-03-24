@@ -1,0 +1,12 @@
+{
+  "name": "cross-verify",
+  "description": "AI cross-verification: compare answers from Codex (GPT), Gemini, and Claude for synthesized analysis",
+  "version": "1.0.0",
+  "author": {
+    "name": "DevBrother",
+    "email": "devbrother2024@gmail.com"
+  },
+  "homepage": "https://github.com/devbrother2024/claude-plugins",
+  "repository": "https://github.com/devbrother2024/claude-plugins",
+  "license": "MIT"
+}
