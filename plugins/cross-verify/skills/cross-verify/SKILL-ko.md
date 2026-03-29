@@ -61,8 +61,8 @@ Codex 리뷰어 (codex 설치 시에만):
 Agent(
   description: "Codex CLI 분석 실행",
   prompt: "<컨텍스트가 포함된 구성 프롬프트>",
-  name: "codex-reviewer",
-  subagent_type: "codex-reviewer",
+  name: "gpt-agent",
+  subagent_type: "gpt-agent",
   team_name: "cross-verify",
   model: "haiku",
   mode: "dontAsk"
@@ -74,8 +74,8 @@ Gemini 리뷰어 (gemini 설치 시에만):
 Agent(
   description: "Gemini CLI 분석 실행",
   prompt: "<컨텍스트가 포함된 구성 프롬프트>",
-  name: "gemini-reviewer",
-  subagent_type: "gemini-reviewer",
+  name: "gem-agent",
+  subagent_type: "gem-agent",
   team_name: "cross-verify",
   model: "haiku",
   mode: "dontAsk"
@@ -90,8 +90,8 @@ Teams를 사용할 수 없는 경우, `run_in_background: true`로 순차 생성
 Agent(
   description: "Codex CLI 분석 실행",
   prompt: "<구성 프롬프트>",
-  name: "codex-reviewer",
-  subagent_type: "codex-reviewer",
+  name: "gpt-agent",
+  subagent_type: "gpt-agent",
   model: "haiku",
   mode: "dontAsk",
   run_in_background: true
@@ -128,8 +128,8 @@ Agent(
 
 출력 후, 팀원에게 종료 메시지를 전송합니다:
 ```
-SendMessage(to: "codex-reviewer", message: {type: "shutdown_request"})
-SendMessage(to: "gemini-reviewer", message: {type: "shutdown_request"})
+SendMessage(to: "gpt-agent", message: {type: "shutdown_request"})
+SendMessage(to: "gem-agent", message: {type: "shutdown_request"})
 ```
 
 ## 에러 처리

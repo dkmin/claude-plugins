@@ -32,9 +32,9 @@ which gemini 2>/dev/null && echo "GEMINI_OK" || echo "GEMINI_NOT_FOUND"
 
 | codex | gemini | teammate 구성 |
 |-------|--------|--------------|
-| OK | OK | codex-reviewer + gemini-reviewer + Lead |
-| OK | 없음 | codex-reviewer + Lead |
-| 없음 | OK | gemini-reviewer + Lead |
+| OK | OK | gpt-agent + gem-agent + Lead |
+| OK | 없음 | gpt-agent + Lead |
+| 없음 | OK | gem-agent + Lead |
 | 없음 | 없음 | 안내 후 중단 |
 
 ### 2단계: 컨텍스트 수집
@@ -70,8 +70,8 @@ TaskCreate(subject: "Lead 종합", description: "모든 결과를 교차 검증 
 ```
 Agent(
   description: "Codex CLI로 GPT 분석 실행",
-  prompt: "당신은 codex-reviewer입니다.
-    1. Task 'GPT 분석'을 claim하세요 (TaskUpdate: owner='codex-reviewer', status='in_progress')
+  prompt: "당신은 gpt-agent입니다.
+    1. Task 'GPT 분석'을 claim하세요 (TaskUpdate: owner='gpt-agent', status='in_progress')
     2. 다음 명령을 실행하세요:
        TMPFILE=$(mktemp /tmp/cv-codex-XXXXXXXX.txt)
        프롬프트를 $TMPFILE에 저장
@@ -84,7 +84,7 @@ Agent(
     {구성된 프롬프트 + 컨텍스트}
 
     반드시 한국어로 답변하세요.",
-  name: "codex-reviewer",
+  name: "gpt-agent",
   team_name: "cross-verify",
   model: "haiku",
   mode: "dontAsk"
@@ -95,8 +95,8 @@ Agent(
 ```
 Agent(
   description: "Gemini CLI로 분석 실행",
-  prompt: "당신은 gemini-reviewer입니다.
-    1. Task 'Gemini 분석'을 claim하세요 (TaskUpdate: owner='gemini-reviewer', status='in_progress')
+  prompt: "당신은 gem-agent입니다.
+    1. Task 'Gemini 분석'을 claim하세요 (TaskUpdate: owner='gem-agent', status='in_progress')
     2. 다음 명령을 실행하세요:
        TMPFILE=$(mktemp /tmp/cv-gemini-XXXXXXXX.txt)
        프롬프트를 $TMPFILE에 저장
@@ -109,7 +109,7 @@ Agent(
     {구성된 프롬프트 + 컨텍스트}
 
     반드시 한국어로 답변하세요.",
-  name: "gemini-reviewer",
+  name: "gem-agent",
   team_name: "cross-verify",
   model: "haiku",
   mode: "dontAsk"
@@ -152,8 +152,8 @@ Teammate들이 작업하는 동안 Lead(Claude)가 동일한 질문에 대해 �
 
 사용자가 승인하면:
 ```
-SendMessage(to: "codex-reviewer", message: {type: "shutdown_request"})
-SendMessage(to: "gemini-reviewer", message: {type: "shutdown_request"})
+SendMessage(to: "gpt-agent", message: {type: "shutdown_request"})
+SendMessage(to: "gem-agent", message: {type: "shutdown_request"})
 // 모든 teammate 종료 확인 후
 TeamDelete()
 ```

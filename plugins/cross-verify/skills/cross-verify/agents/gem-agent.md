@@ -1,6 +1,6 @@
 ---
-name: gemini-reviewer
-description: Runs Gemini CLI to return analysis results
+name: gem-agent
+description: Runs Gemini CLI to return Gemini analysis results
 tools: Bash, Read
 model: haiku
 ---

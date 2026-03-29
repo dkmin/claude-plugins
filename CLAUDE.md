@@ -18,15 +18,19 @@ claude-plugins/
 │   │       ├── SKILL.md              ← 오케스트레이터
 │   │       ├── SKILL-ko.md           ← 한국어 번역
 │   │       └── agents/
-│   │           ├── codex-reviewer.md
-│   │           └── gemini-reviewer.md
+│   │           ├── gpt-agent.md
+│   │           └── gem-agent.md
 │   ├── req-gpt/                      ← GPT 서브에이전트 호출 #260329-15
 │   │   ├── .claude-plugin/plugin.json
 │   │   └── skills/req-gpt/
 │   │       └── SKILL.md
-│   └── req-gem/                      ← Gemini 서브에이전트 호출 #260329-15
+│   ├── req-gem/                      ← Gemini 서브에이전트 호출 #260329-15
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── skills/req-gem/
+│   │       └── SKILL.md
+│   └── start-agent-teams/            ← Agent Teams 오케스트레이터 #260329-15
 │       ├── .claude-plugin/plugin.json
-│       └── skills/req-gem/
+│       └── skills/start-agent-teams/
 │           └── SKILL.md
 ├── docs/                             ← Zettel 분석 카드
 └── README.md
@@ -37,8 +41,9 @@ claude-plugins/
 | 플러그인 | 설명 | 기본 모델 |
 |---------|------|----------|
 | cross-verify | Codex(GPT) + Gemini + Claude 교차 검증 | haiku (서브에이전트) |
-| req-gpt | Codex CLI로 GPT 호출 | gpt-5.2 |
-| req-gem | Gemini CLI로 Gemini 호출 | gemini-2.5-pro | #260329-15
+| req-gpt | Codex CLI로 GPT 단독 호출 | gpt-5.2 |
+| req-gem | Gemini CLI로 Gemini 단독 호출 | gemini-2.5-pro |
+| start-agent-teams | Agent Teams 병렬 교차 검증 (tmux panes) | haiku (teammate) | #260329-15
 
 ## 개발 참고
 

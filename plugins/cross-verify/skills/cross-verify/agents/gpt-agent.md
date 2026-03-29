@@ -1,6 +1,6 @@
 ---
-name: codex-reviewer
-description: Runs Codex CLI to return code analysis/review results
+name: gpt-agent
+description: Runs Codex CLI to return GPT analysis results
 tools: Bash, Read
 model: haiku
 ---

@@ -56,26 +56,26 @@ If TeamCreate fails (Agent Teams not enabled):
 
 On success, spawn agents in **a single message** (parallel):
 
-Codex reviewer (only if codex is available):
+Codex agent (only if codex is available):
 ```
 Agent(
   description: "Run Codex CLI analysis",
   prompt: "<composed prompt with context>",
-  name: "codex-reviewer",
-  subagent_type: "codex-reviewer",
+  name: "gpt-agent",
+  subagent_type: "gpt-agent",
   team_name: "cross-verify",
   model: "haiku",
   mode: "dontAsk"
 )
 ```
 
-Gemini reviewer (only if gemini is available):
+Gemini agent (only if gemini is available):
 ```
 Agent(
   description: "Run Gemini CLI analysis",
   prompt: "<composed prompt with context>",
-  name: "gemini-reviewer",
-  subagent_type: "gemini-reviewer",
+  name: "gem-agent",
+  subagent_type: "gem-agent",
   team_name: "cross-verify",
   model: "haiku",
   mode: "dontAsk"
@@ -90,8 +90,8 @@ If Teams is not available, spawn agents sequentially with `run_in_background: tr
 Agent(
   description: "Run Codex CLI analysis",
   prompt: "<composed prompt>",
-  name: "codex-reviewer",
-  subagent_type: "codex-reviewer",
+  name: "gpt-agent",
+  subagent_type: "gpt-agent",
   model: "haiku",
   mode: "dontAsk",
   run_in_background: true
@@ -128,8 +128,8 @@ After receiving all results, synthesize in this format:
 
 After output, send shutdown to teammates:
 ```
-SendMessage(to: "codex-reviewer", message: {type: "shutdown_request"})
-SendMessage(to: "gemini-reviewer", message: {type: "shutdown_request"})
+SendMessage(to: "gpt-agent", message: {type: "shutdown_request"})
+SendMessage(to: "gem-agent", message: {type: "shutdown_request"})
 ```
 
 ## Error Handling
