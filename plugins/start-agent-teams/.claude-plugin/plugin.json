@@ -1,0 +1,12 @@
+{
+  "name": "start-agent-teams",
+  "description": "Multi-AI cross-verification orchestrator via Agent Teams with tmux split panes",
+  "version": "1.0.0",
+  "author": {
+    "name": "DevBrother",
+    "email": "devbrother2024@gmail.com"
+  },
+  "homepage": "https://github.com/devbrother2024/claude-plugins",
+  "repository": "https://github.com/devbrother2024/claude-plugins",
+  "license": "MIT"
+}

@@ -1,6 +1,6 @@
 ---
 name: req-gem
-description: Gemini에게 질문을 보내고 답변을 받는 스킬. Gemini CLI를 통해 Gemini를 서브에이전트처럼 호출합니다. "/req-gem", "Gemini한테 물어봐", "Gemini 의견", "ask gemini", "gemini로 질문" 등의 요청에 활성화됩니다.
+description: Gemini에게 질문을 보내고 답변을 받는 스킬. Gemini CLI를 통해 Gemini를 서브에이전트처럼 호출합니다. "/req-gem", "Gemini한테 물어봐", "Gemini 의견", "ask gemini", "gemini로 질문" 등의 요청에 활성화됩니다. 병렬 교차 검증은 /start-agent-teams 를 사용하세요.
 ---
 
 # req-gem — Gemini 서브에이전트 호출 스킬
@@ -88,6 +88,11 @@ Gemini 응답을 다음 형식으로 출력:
 ```
 
 응답을 요약하거나 수정하지 않습니다. 사용자가 추가 분석을 요청하면 그때 Claude가 해석합니다.
+
+## 병렬 교차 검증
+
+GPT + Gemini 동시 분석이 필요하면 `/start-agent-teams`를 사용하세요.
+Agent Teams + tmux split panes로 병렬 실행 후 Lead가 종합합니다.
 
 ## 에러 처리
 

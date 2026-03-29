@@ -34,6 +34,15 @@
       "author": {
         "name": "DevBrother"
       }
+    },
+    {
+      "name": "start-agent-teams",
+      "source": "./plugins/start-agent-teams",
+      "description": "Multi-AI cross-verification via Agent Teams with tmux split panes",
+      "version": "1.0.0",
+      "author": {
+        "name": "DevBrother"
+      }
     }
   ]
 }
