@@ -25,6 +25,15 @@
       "author": {
         "name": "DevBrother"
       }
+    },
+    {
+      "name": "req-gem",
+      "source": "./plugins/req-gem",
+      "description": "Gemini subagent via Gemini CLI: send questions to Gemini models",
+      "version": "1.0.0",
+      "author": {
+        "name": "DevBrother"
+      }
     }
   ]
 }

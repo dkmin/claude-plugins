@@ -1,0 +1,12 @@
+{
+  "name": "req-gem",
+  "description": "Gemini subagent via Gemini CLI: send questions to Gemini models and get responses",
+  "version": "1.0.0",
+  "author": {
+    "name": "DevBrother",
+    "email": "devbrother2024@gmail.com"
+  },
+  "homepage": "https://github.com/devbrother2024/claude-plugins",
+  "repository": "https://github.com/devbrother2024/claude-plugins",
+  "license": "MIT"
+}

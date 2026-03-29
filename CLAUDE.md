@@ -20,9 +20,13 @@ claude-plugins/
 │   │       └── agents/
 │   │           ├── codex-reviewer.md
 │   │           └── gemini-reviewer.md
-│   └── req-gpt/                      ← GPT 서브에이전트 호출 #260329-15
+│   ├── req-gpt/                      ← GPT 서브에이전트 호출 #260329-15
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── skills/req-gpt/
+│   │       └── SKILL.md
+│   └── req-gem/                      ← Gemini 서브에이전트 호출 #260329-15
 │       ├── .claude-plugin/plugin.json
-│       └── skills/req-gpt/
+│       └── skills/req-gem/
 │           └── SKILL.md
 ├── docs/                             ← Zettel 분석 카드
 └── README.md
@@ -34,6 +38,7 @@ claude-plugins/
 |---------|------|----------|
 | cross-verify | Codex(GPT) + Gemini + Claude 교차 검증 | haiku (서브에이전트) |
 | req-gpt | Codex CLI로 GPT 호출 | gpt-5.2 |
+| req-gem | Gemini CLI로 Gemini 호출 | gemini-2.5-pro | #260329-15
 
 ## 개발 참고
 
@@ -48,3 +53,4 @@ claude-plugins/
 - ChatGPT 계정은 `gpt-5.2`만 지원 (o3, gpt-4o 등 사용 불가)
 - `codex exec --full-auto`는 sandbox workspace-write 모드 (read-only 아님)
 - Gemini CLI는 반드시 `-m` 플래그로 모델 지정 (기본 모델 404 에러)
+- `gemini-3.1-pro`는 아직 미출시 (404), `gemini-2.5-pro` 사용 #260329-15
