@@ -16,6 +16,15 @@
       "author": {
         "name": "DevBrother"
       }
+    },
+    {
+      "name": "req-gpt",
+      "source": "./plugins/req-gpt",
+      "description": "GPT subagent via Codex CLI: send questions to GPT models",
+      "version": "1.0.0",
+      "author": {
+        "name": "DevBrother"
+      }
     }
   ]
 }
